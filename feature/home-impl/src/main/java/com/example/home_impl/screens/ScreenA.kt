@@ -1,5 +1,6 @@
 package com.example.home_impl.screens
 
+import android.net.Uri
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -41,7 +42,7 @@ fun ScreenA(modifier: Modifier, navController: NavHostController) {
         Button(
             modifier = Modifier.padding(16.dp),
             onClick = {
-                navController.navigate(InternalHomeFeatureApi.screenB(parameter = text))
+                navController.navigate(deepLink = Uri.parse(InternalHomeFeatureApi.screenB(parameter = text)))
             }) {
             Text("To screen B")
         }

@@ -6,6 +6,9 @@ import androidx.navigation.NavHostController
 
 interface FeatureApi {
 
+    val startDeeplink: String
+        get() = "https://"
+
     fun registerGraph(
         navGraphBuilder: NavGraphBuilder,
         navController: NavHostController,

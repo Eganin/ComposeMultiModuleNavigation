@@ -21,7 +21,6 @@ class HomeFeatureImpl : HomeFeatureApi {
         navGraphBuilder.composable(route = baseRoute) {
             HomeScreen(modifier = modifier, navController = navController)
         }
-
         InternalHomeFeatureApi.registerGraph(
             navGraphBuilder = navGraphBuilder,
             navController = navController,

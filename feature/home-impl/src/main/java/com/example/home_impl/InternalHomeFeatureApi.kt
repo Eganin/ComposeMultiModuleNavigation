@@ -1,5 +1,6 @@
 package com.example.home_impl
 
+import android.content.Intent
 import androidx.compose.ui.Modifier
 import androidx.navigation.*
 import androidx.navigation.compose.composable
@@ -18,7 +19,7 @@ object InternalHomeFeatureApi : FeatureApi {
 
     fun screenA() = screenARoute
 
-    fun screenB(parameter: String) = "$screenBRoute/${parameter}"
+    fun screenB(parameter: String) = "$startDeeplink$screenBRoute/$parameter"
 
     override fun registerGraph(
         navGraphBuilder: NavGraphBuilder,
@@ -34,11 +35,20 @@ object InternalHomeFeatureApi : FeatureApi {
             }
 
             composable(
-                route = "$screenBRoute/$parameterKey",
-                arguments = listOf(navArgument(parameterKey) { type = NavType.StringType })
+                route = screenBRoute,
+                deepLinks = listOf(
+                    navDeepLink {
+                        uriPattern = "$startDeeplink$screenBRoute/{$parameterKey}"
+                        action = Intent.ACTION_VIEW
+                    }),
+                arguments = listOf(
+                    navArgument(name = parameterKey) {
+                        type = NavType.StringType
+                        defaultValue = ""
+                    }
+                )
             ) { entry ->
-                val arguments = requireNotNull(entry.arguments)
-                val argument = arguments.getString(parameterKey).orEmpty()
+                val argument = entry.arguments?.getString(parameterKey).orEmpty()
                 ScreenB(argument = argument, modifier = modifier)
             }
         }

@@ -9,9 +9,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.composemultimodulenavigation.ui.theme.Purple200
 import com.example.composemultimodulenavigation.ui.theme.Teal200
 import java.util.*
 
@@ -22,7 +24,7 @@ fun AppContent() {
     }.toList()
     val navController = rememberNavController()
     Scaffold(
-        backgroundColor = Teal200,
+        backgroundColor = Purple200,
         bottomBar = {
             BottomBar(
                 navController = navController,
@@ -30,9 +32,14 @@ fun AppContent() {
             )
         }
     ) { paddingValues ->
+        val paddings =
+            paddingValues.calculateBottomPadding() +
+                    paddingValues.calculateTopPadding() +
+                    paddingValues.calculateLeftPadding(layoutDirection = LayoutDirection.Rtl) +
+                    paddingValues.calculateRightPadding(layoutDirection = LayoutDirection.Rtl)
         AppNavGraph(
             navController = navController,
-            modifier = Modifier.padding(all = paddingValues.calculateBottomPadding())
+            modifier = Modifier.padding(all = paddings)
         )
     }
 }
@@ -57,7 +64,6 @@ fun BottomBar(navController: NavController, tabs: List<BottomTabs>) {
                     },
                     label = { Text(text = stringResource(id = tab.title).uppercase(locale = Locale.getDefault())) },
                     selected = currentRoute == tab.route,
-                    alwaysShowLabel = false,
                     selectedContentColor = MaterialTheme.colors.secondary,
                     unselectedContentColor = LocalContentColor.current,
                     modifier = Modifier.navigationBarsPadding(),

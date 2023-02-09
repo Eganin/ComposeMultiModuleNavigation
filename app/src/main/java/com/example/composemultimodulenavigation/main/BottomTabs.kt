@@ -11,16 +11,16 @@ enum class BottomTabs(
     @DrawableRes
     val icon: Int,
     val route: String
-){
+) {
 
     HOME(
         title = R.string.home_label,
         icon = R.drawable.baseline_home_24,
-        route=DependencyProvider.homeFeature().homeRoute()
+        route = DependencyProvider.homeFeature().homeRoute()
     ),
     SETTINGS(
         title = R.string.settings_label,
         icon = R.drawable.baseline_settings_24,
-        route=DependencyProvider.homeFeature().homeRoute()
+        route = DependencyProvider.homeFeature().homeRoute()
     )
 }
