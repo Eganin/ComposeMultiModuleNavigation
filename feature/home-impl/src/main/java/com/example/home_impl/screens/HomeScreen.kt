@@ -14,7 +14,7 @@ import androidx.navigation.NavHostController
 import com.example.home_impl.InternalHomeFeatureImpl
 
 @Composable
-fun HomeScreen(modifier: Modifier, navController: NavHostController) {
+internal fun HomeScreen(modifier: Modifier, navController: NavHostController) {
     Column(
         modifier = modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,

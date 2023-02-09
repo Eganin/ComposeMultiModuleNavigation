@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.sp
 
 
 @Composable
-fun SettingsScreen(modifier: Modifier = Modifier) {
+internal fun SettingsScreen(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,

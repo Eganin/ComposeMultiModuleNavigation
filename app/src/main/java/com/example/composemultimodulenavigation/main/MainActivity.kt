@@ -7,6 +7,7 @@ import androidx.core.view.WindowCompat
 import com.example.composemultimodulenavigation.ui.theme.ComposeMultiModuleNavigationTheme
 import com.example.dependency_provider.DependencyProvider
 import com.example.home_impl.HomeFeatureImpl
+import com.example.onboarding_impl.OnBoardingFeatureImpl
 import com.example.settings_impl.SettingsFeatureImpl
 
 class MainActivity : ComponentActivity() {
@@ -16,7 +17,8 @@ class MainActivity : ComponentActivity() {
 
         DependencyProvider.provideImpl(
             homeFeatureApi = HomeFeatureImpl(),
-            settingsFeatureApi = SettingsFeatureImpl()
+            settingsFeatureApi = SettingsFeatureImpl(),
+            onBoardingFeatureApi = OnBoardingFeatureImpl()
         )
 
         setContent {

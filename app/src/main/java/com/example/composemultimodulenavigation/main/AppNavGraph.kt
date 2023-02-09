@@ -14,7 +14,7 @@ fun AppNavGraph(
 ) {
     NavHost(
         navController = navController,
-        startDestination = DependencyProvider.homeFeature().homeRoute()
+        startDestination = DependencyProvider.onBoardingFeature().onBoardingRoute()
     ) {
         register(
             featureApi = DependencyProvider.homeFeature(),
@@ -24,6 +24,12 @@ fun AppNavGraph(
 
         register(
             featureApi = DependencyProvider.settingsFeature(),
+            navController = navController,
+            modifier = modifier
+        )
+
+        register(
+            featureApi = DependencyProvider.onBoardingFeature(),
             navController = navController,
             modifier = modifier
         )

@@ -41,4 +41,5 @@ dependencies {
 
     implementation project(':feature:home-api')
     implementation project(':feature:settings-api')
+    implementation project(':feature:onboarding-api')
 }

@@ -73,4 +73,7 @@ dependencies {
 
     implementation project(':feature:settings-api')
     implementation project(':feature:settings-impl')
+
+    implementation project(':feature:onboarding-api')
+    implementation project(':feature:onboarding-impl')
 }

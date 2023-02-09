@@ -17,7 +17,7 @@ import androidx.navigation.NavHostController
 import com.example.home_impl.InternalHomeFeatureImpl
 
 @Composable
-fun ScreenA(modifier: Modifier, navController: NavHostController) {
+internal fun ScreenA(modifier: Modifier, navController: NavHostController) {
     var text by remember {
         mutableStateOf(value = "")
     }
