@@ -1,4 +1,4 @@
-package com.example.deppendency_provider
+package com.example.dependency_provider
 
 import org.junit.Test
 

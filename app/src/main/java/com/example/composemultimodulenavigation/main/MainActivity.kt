@@ -1,4 +1,4 @@
-package com.example.composemultimodulenavigation
+package com.example.composemultimodulenavigation.main
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,34 +10,24 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.view.WindowCompat
 import com.example.composemultimodulenavigation.ui.theme.ComposeMultiModuleNavigationTheme
+import com.example.dependency_provider.DependencyProvider
+import com.example.home_impl.HomeFeatureImpl
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, true)
+
+        DependencyProvider.provideImpl(
+            homeFeatureApi = HomeFeatureImpl()
+        )
+
         setContent {
             ComposeMultiModuleNavigationTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
-                }
+                AppContent()
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    ComposeMultiModuleNavigationTheme {
-        Greeting("Android")
     }
 }

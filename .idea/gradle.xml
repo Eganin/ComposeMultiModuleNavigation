@@ -12,7 +12,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/core" />
-            <option value="$PROJECT_DIR$/core/deppendency-provider" />
+            <option value="$PROJECT_DIR$/core/dependency-provider" />
             <option value="$PROJECT_DIR$/core/feature-api" />
             <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/feature/home-api" />

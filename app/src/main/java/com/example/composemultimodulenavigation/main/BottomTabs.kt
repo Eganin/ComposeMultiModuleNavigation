@@ -5,7 +5,7 @@ import androidx.annotation.StringRes
 import com.example.composemultimodulenavigation.R
 import com.example.dependency_provider.DependencyProvider
 
-enum class BottomBars(
+enum class BottomTabs(
     @StringRes
     val title: Int,
     @DrawableRes

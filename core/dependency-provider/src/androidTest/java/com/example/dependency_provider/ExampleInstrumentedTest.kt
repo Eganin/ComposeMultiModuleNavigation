@@ -1,4 +1,4 @@
-package com.example.deppendency_provider
+package com.example.dependency_provider
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

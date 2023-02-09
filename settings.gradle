@@ -16,7 +16,7 @@ rootProject.name = "ComposeMultiModuleNavigation"
 include ':app'
 include ':core'
 include ':core:feature-api'
-include ':core:deppendency-provider'
+include ':core:dependency-provider'
 include ':feature'
 include ':feature:home-api'
 include ':feature:home-impl'
