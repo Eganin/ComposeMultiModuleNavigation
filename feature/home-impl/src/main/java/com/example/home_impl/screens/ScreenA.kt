@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.home_impl.InternalHomeFeatureApi
+import com.example.home_impl.InternalHomeFeatureImpl
 
 @Composable
 fun ScreenA(modifier: Modifier, navController: NavHostController) {
@@ -42,7 +42,7 @@ fun ScreenA(modifier: Modifier, navController: NavHostController) {
         Button(
             modifier = Modifier.padding(16.dp),
             onClick = {
-                navController.navigate(deepLink = Uri.parse(InternalHomeFeatureApi.screenB(parameter = text)))
+                navController.navigate(deepLink = Uri.parse(InternalHomeFeatureImpl.screenB(parameter = text)))
             }) {
             Text("To screen B")
         }

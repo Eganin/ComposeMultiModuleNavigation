@@ -21,5 +21,11 @@ fun AppNavGraph(
             navController = navController,
             modifier = modifier
         )
+
+        register(
+            featureApi = DependencyProvider.settingsFeature(),
+            navController = navController,
+            modifier = modifier
+        )
     }
 }

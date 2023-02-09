@@ -11,7 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.example.home_impl.InternalHomeFeatureApi
+import com.example.home_impl.InternalHomeFeatureImpl
 
 @Composable
 fun HomeScreen(modifier: Modifier, navController: NavHostController) {
@@ -28,7 +28,7 @@ fun HomeScreen(modifier: Modifier, navController: NavHostController) {
         Button(
             modifier = Modifier.padding(all = 16.dp),
             onClick = {
-                navController.navigate(InternalHomeFeatureApi.scenarioABRoute())
+                navController.navigate(InternalHomeFeatureImpl.scenarioABRoute())
             }) {
             Text(text = "Navigate to A-B scenario")
         }

@@ -21,6 +21,6 @@ enum class BottomTabs(
     SETTINGS(
         title = R.string.settings_label,
         icon = R.drawable.baseline_settings_24,
-        route = DependencyProvider.homeFeature().homeRoute()
+        route = DependencyProvider.settingsFeature().settingsRoute()
     )
 }

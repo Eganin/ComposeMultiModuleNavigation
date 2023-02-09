@@ -8,7 +8,7 @@ import com.example.feature_api.FeatureApi
 import com.example.home_impl.screens.ScreenA
 import com.example.home_impl.screens.ScreenB
 
-object InternalHomeFeatureApi : FeatureApi {
+object InternalHomeFeatureImpl : FeatureApi {
 
     private const val scenarioABRoute = "home/scenarioABRoute"
     private const val parameterKey = "parameterKey"
