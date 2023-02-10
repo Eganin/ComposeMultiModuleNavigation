@@ -76,4 +76,8 @@ dependencies {
 
     implementation project(':feature:onboarding-api')
     implementation project(':feature:onboarding-impl')
+
+    //Decompose
+    implementation("com.arkivanov.decompose:decompose:1.0.0")
+    implementation("com.arkivanov.decompose:extensions-compose-jetpack:1.0.0")
 }
